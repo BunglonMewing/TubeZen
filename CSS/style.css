@@ -1,0 +1,154 @@
+/* ===== Root & Variables ===== */
+:root {
+  --accent: #ff0000;
+  --bg: #121212;
+  --bg-alt: #1f1f1f;
+  --text: #ffffff;
+  --text-muted: #b3b3b3;
+  --radius: 6px;
+  --space: 1rem;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-alt);
+  padding: var(--space);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+#burger {
+  display: none;          /* di-hide di desktop */
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+#nav-links a {
+  margin-left: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+#nav-links a:hover {
+  color: var(--text);
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero img {
+  max-width: 240px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: .7rem 1.4rem;
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: var(--bg-alt);
+  border: 1px solid var(--accent);
+}
+
+/* ===== USP ===== */
+.usp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space);
+  padding: 2rem var(--space);
+  background: var(--bg-alt);
+  text-align: center;
+}
+
+.usp h2 {
+  margin-bottom: .4rem;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 2rem var(--space);
+  max-width: 760px;
+  margin: auto;
+}
+
+.feature-block {
+  margin-bottom: 2rem;
+}
+
+.download-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.download-table th,
+.download-table td {
+  border: 1px solid #333;
+  padding: .6rem;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--bg-alt);
+  text-align: center;
+  padding: 1rem;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 680px) {
+  #burger { display: block; }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-alt);
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 60%;
+  }
+  #nav-links a {
+    padding: 1rem;
+    border-top: 1px solid #333;
+  }
+}
